@@ -4,10 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fearless</title>
-    <link rel="stylesheet" src="style.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://use.typekit.net/lxm7zsb.css"> <!--Alle adobe fonts-->
 </head>
 <body onload="getAlbumData(1)">
-    
+    <button class="back-button" onclick="window.location.href='/'">← Back</button>
+    <div class="album-container">
+        <div class="album-header">
+            <img id="bilde" alt="Fearless Album Cover" class="album-cover">
+            <div class="album-details">
+                <p id="album-label"></p>
+                <p id="album-title"></p>
+                <p class="album-meta">Taylor Swift • 2021 • 26 songs, 1 h 53 min</p>
+                <div class="album-actions">
+                    <button onclick="startPlaybackOnDevice(1)" class="play-button" >▶ Play</button>
+                    <button onclick="playAlbumShuffled(1)" class="shuffle-button">🔀 Shuffle</button>
+                </div>
+            </div>
+        </div>
+        <div class="tracklist">
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Title</th>
+                        <th>Duration</th>
+                    </tr>
+                </thead>
+                <tbody id="tracklist">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="../script.js"></script>
 </body>
 </html>
