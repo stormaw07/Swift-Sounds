@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lover</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.typekit.net/lxm7zsb.css"> <!--Alle adobe fonts-->
+</head>
+<body onload="getAlbumData(6)">
+    <button class="back-button" onclick="window.location.href='/'">← Back</button>
+    <div class="album-container">
+        <div class="album-header">
+            <img id="bilde" alt="Lover Album Cover" class="album-cover">
+            <div class="album-details">
+                <p id="album-label"></p>
+                <p id="album-title"></p>
+                <p class="album-meta">Taylor Swift • 2019 • 18 songs, 1 h 1 min</p>
+                <div class="album-actions">
+                    <button onclick="startPlaybackOnDevice(6)" class="play-button" >▶ Play</button>
+                    <button onclick="playAlbumShuffled(6)" class="shuffle-button">🔀 Shuffle</button>
+                </div>
+            </div>
+        </div>
+        <div class="tracklist">
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Title</th>
+                        <th>Duration</th>
+                    </tr>
+                </thead>
+                <tbody id="tracklist">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="../script.js"></script>
+</body>
+</html>
