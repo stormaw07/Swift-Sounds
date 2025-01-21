@@ -196,3 +196,9 @@ async function playAlbumShuffled(album) {
 // Spiller av albumet i tilfeldig rekkefølge:
 // playAlbumShuffled();
 
+function playRandomSong(){
+  let random_int = Math.floor(Math.random() * 11);
+  console.log(random_int)
+  playAlbumShuffled(random_int)
+}
+
