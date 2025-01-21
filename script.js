@@ -9,6 +9,7 @@ const clientSecret = '8761d61fc4b2425cb90d4cc3daae0094';
 const redirectUri = 'http://127.0.0.1:5500';
 const tokenUrl = 'https://accounts.spotify.com/api/token';
 const deviceId = 'e112199fd21344deb7e9d4d3a02d966969ee8e38';
+let trackNr = 0
 const albumUri = [
   "5eyZZoQEFQWRHkV2xgAeBw", // Taylor Swift - 0
   "4hDok0OAJd57SGIT8xuWJH", // Fearless - 1
@@ -115,8 +116,7 @@ async function getAlbumData(album) {
 
 
 // Spiller av albumet fra starten av
-async function startPlaybackOnDevice(album) {
-  const trackNr = 0
+async function startPlaybackOnDevice(album, trackNr) {
   if (!accessToken) {
     await refreshAccessToken();
   }
@@ -196,9 +196,35 @@ async function playAlbumShuffled(album) {
 // Spiller av albumet i tilfeldig rekkefølge:
 // playAlbumShuffled();
 
+let random_int = 0
+
 function playRandomSong(){
-  let random_int = Math.floor(Math.random() * 11);
-  console.log(random_int)
-  playAlbumShuffled(random_int)
+  if (!random_int) {
+    random_int = Math.floor(Math.random() * 11);
+    console.log(random_int+1)
+    pickRandomTrackNr(random_int)
+  } else {
+    pickRandomTrackNr(random_int)
+  }
 }
 
+async function pickRandomTrackNr(random_int) {
+  if (!trackNr) {
+    if (!accessToken) {
+      await refreshAccessToken();
+    }
+    fetch(`https://api.spotify.com/v1/albums/${albumUri[random_int]}`, {
+      method: "GET",
+      headers: { "Authorization": `Bearer ${accessToken}` },
+    })
+    .then(response => response.json())
+    .then(data => {
+      trackNr = Math.floor(Math.random() * data.total_tracks) 
+      console.log(trackNr+1)
+      startPlaybackOnDevice(random_int, trackNr)
+    })
+    .catch(error => console.error("Error:", error));
+  } else{
+    startPlaybackOnDevice(random_int, trackNr)
+  }
+}
