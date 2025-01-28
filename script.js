@@ -196,35 +196,35 @@ async function playAlbumShuffled(album) {
 // Spiller av albumet i tilfeldig rekkefølge:
 // playAlbumShuffled();
 
-let random_int = 0
+let random_int = 0 // Oppretter variablen random_int og gir den verdien 0 sånn at den er deklarert med slår av som false i løkken
 
 function playRandomSong(){
-  if (!random_int) {
+  if (!random_int) { // Hvis random_int = False kjøres dette:
     random_int = Math.floor(Math.random() * 11);
     console.log(random_int+1)
     pickRandomTrackNr(random_int)
-  } else {
+  } else { // Hvis random_int slår ut som True går den bare videre til neste funksjon, sånn at det ikke kommer en ny sang hver gang man trykker på knappen
     pickRandomTrackNr(random_int)
   }
 }
 
 async function pickRandomTrackNr(random_int) {
-  if (!trackNr) {
+  if (!trackNr) { // Hvis trackNr ikke eksisterer enda må den finne ut av hvilken track den skal spille
     if (!accessToken) {
-      await refreshAccessToken();
+      await refreshAccessToken(); // Kaller på refreshtoken funksjonen sånn at den kan hente ut data fra API-en
     }
-    fetch(`https://api.spotify.com/v1/albums/${albumUri[random_int]}`, {
+    fetch(`https://api.spotify.com/v1/albums/${albumUri[random_int]}`, { // Henter albumet basert på hvilken tall man fikk fra dne forrige funksjonen
       method: "GET",
       headers: { "Authorization": `Bearer ${accessToken}` },
     })
     .then(response => response.json())
     .then(data => {
-      trackNr = Math.floor(Math.random() * data.total_tracks) 
+      trackNr = Math.floor(Math.random() * data.total_tracks) // Velger et tilfeldig tall basert på hvor mange sanger det er på albumet man henter 
       console.log(trackNr+1)
-      startPlaybackOnDevice(random_int, trackNr)
+      startPlaybackOnDevice(random_int, trackNr) // Sender inn random_int for albumet og trackNr for hvilken sang som skal spilles av
     })
     .catch(error => console.error("Error:", error));
   } else{
-    startPlaybackOnDevice(random_int, trackNr)
+    startPlaybackOnDevice(random_int, trackNr) // Hvis trackNr allerede finnes, altså knappen har blitt trykket på før, går den videre til avspillingsfunksjonen
   }
 }
