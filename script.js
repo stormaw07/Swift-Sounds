@@ -1,5 +1,5 @@
 // Dropdownmenu:
-function myFunction() {
+function dropDownMenu() {
   document.getElementById("dropdownMusic").classList.toggle("show");
 }
 // API-koden:
@@ -28,7 +28,7 @@ const albumUri = [
 
 // Refresh accessToken funksjon:
 async function refreshAccessToken() {
-  const refreshToken = 'AQC3R1a3o6sL0hEIOAG_PtqZ3VdDmdfRTGqE1pQtShZzgNM2pV9CRi0_Jjm7uo2KVc0-Jt_Q0Kixwjhdd1W1YU-s4UiyrvDfMGDRXjCeNmyfehcylF9lj6nCnKIbMyXD6Lk'; // Get the refresh token from local storage
+  const refreshToken = 'AQC3R1a3o6sL0hEIOAG_PtqZ3VdDmdfRTGqE1pQtShZzgNM2pV9CRi0_Jjm7uo2KVc0-Jt_Q0Kixwjhdd1W1YU-s4UiyrvDfMGDRXjCeNmyfehcylF9lj6nCnKIbMyXD6Lk';
 
   if (!refreshToken) {
     console.error('No refresh token available.');
@@ -198,7 +198,7 @@ async function playAlbumShuffled(album) {
 
 let random_int = 0 // Oppretter variablen random_int og gir den verdien 0 sånn at den er deklarert med slår av som false i løkken
 
-function playRandomSong(){
+function pickRandomSong(){
   if (!random_int) { // Hvis random_int = False kjøres dette:
     random_int = Math.floor(Math.random() * 11);
     console.log(random_int+1)
