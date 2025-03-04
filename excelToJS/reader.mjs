@@ -10,7 +10,7 @@ async function main() {
         conn = await mariadb.createConnection({
             host: 'localhost',
             user: 'root',
-            password: process.env.KEY,
+            password: process.env.DB_PASSWORD,
             database: 'Swiftle',
             port: 3306
         });
