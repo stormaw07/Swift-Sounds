@@ -7,11 +7,22 @@ app.use(express.json());
 let cors = require("cors")
 app.use(cors())
 
-app.get("/home", async (req, res) => {
-    let query = "SELECT * FROM Album_songs;";
+app.post("/", async (req, res) => {
+    let query = `SELECT * FROM Album_songs`;
     try {
+        console.log(req.body)
         let albumSongs = await database.query(query)
-        res.send(albumSongs)
+        const albumName = req.body.album_name
+        const trackNumber = req.body.track_number
+        let trackName = ''
+
+        for (let i = 0; i < albumSongs.length; i++){
+            if (albumSongs[i].album_name == albumName && albumSongs[i].track_number == trackNumber) {
+                trackName = albumSongs[i].track_name
+            }
+        }
+
+        res.json(trackName)
     } catch (error) {
         console.log(error)
     }

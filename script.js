@@ -221,6 +221,7 @@ async function pickRandomTrackNr(random_int) {
     .then(data => {
       trackNr = Math.floor(Math.random() * data.total_tracks) // Velger et tilfeldig tall basert på hvor mange sanger det er på albumet man henter 
       console.log(trackNr+1)
+      getSongsFromDatabase(data.name, trackNr+1)
       startPlaybackOnDevice(random_int, trackNr) // Sender inn random_int for albumet og trackNr for hvilken sang som skal spilles av
     })
     .catch(error => console.error("Error:", error));
@@ -228,3 +229,32 @@ async function pickRandomTrackNr(random_int) {
     startPlaybackOnDevice(random_int, trackNr) // Hvis trackNr allerede finnes, altså knappen har blitt trykket på før, går den videre til avspillingsfunksjonen
   }
 }
+
+function getSongsFromDatabase(album_name, track_number) {
+  const API_URL = 'http://localhost:3000/'
+
+  let albumbundle = {
+    'album_name': album_name,
+    'track_number': track_number
+  }
+  console.log("Sender inn:", JSON.stringify(albumbundle))
+  fetch(API_URL, {
+    method: "POST",
+    body: JSON.stringify(albumbundle),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+  }
+})
+  .then(function (response) {
+    return response.json();
+  })
+  .then(data => {
+    answer = data
+    console.log(answer)
+  })
+  
+}
+
+
+
+
