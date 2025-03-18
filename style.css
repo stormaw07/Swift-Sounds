@@ -168,9 +168,12 @@ header {
 }
 #forside{
     width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 #forsideBilde{
-    width: 100vw;
+    height: 105vh;
     filter: brightness(60%);
 }
 #sloganBox{
