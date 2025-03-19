@@ -198,6 +198,11 @@ async function playAlbumShuffled(album) {
 
 let random_int = 0 // Oppretter variablen random_int og gir den verdien 0 sånn at den er deklarert med slår av som false i løkken
 let answer // Oppretter answer som en top string sånn at den er global
+const removeList = [ // Oppretter en liste med strings som skal bli fjernet fra "answer" variabelen
+  ` (Taylor's Version)`,` (From The Vault)`,
+  ` - Radio Single Remix`,` - Pop Version`,` - bonus track`,
+  ` (feat. Colbie Caillat)`,` (feat. Marren Morris)`,` (feat. Keith Urban)`,` (feat. Fall Out Boy)`,` (feat. Hayley Williams)`,` (feat. Gary Lightbody of Snow Patrol)`,` (feat. Ed Sheeran)`,` (feat. Phoebie Bridgers)`,` (feat. Chris Stapleton)`,` (feat. Kendrick Lamar)`,` (feat. The Chicks)`,` (feat. Brendon Urie of Panic! At The Disco)`,` (feat. Bon Iver)`,` (feat. HAIM)`,` (feat. The National)`,` (feat. Lana Del Rey)`,` (feat. More Lana Del Rey)`,` (feat. Ice Spice)`,` (feat. Post Malone)`,` (feat. Florence + The Machine)`
+];
 
 function pickRandomSong(){
   if (!random_int) { // Hvis random_int = False kjøres dette:
@@ -265,8 +270,16 @@ document.getElementById('guess').addEventListener('keydown', function (e) {
 
 function guessSong() {
   let guess = document.getElementById('guess').value
-  if (guess === answer) {
+  // Fjerner de stringsene i listen fra "answer"
+  removeList.forEach(str => {
+    answer = answer.replace(str, "");
+  });
+  answer = answer.trim();
+  console.log(answer);
+
+  if (guess.toLowerCase() === answer.toLowerCase()) {
     console.log('rikitg')
+    document.getElementById('guess').value = ""
   } else {
     console.log('feil')
   }
