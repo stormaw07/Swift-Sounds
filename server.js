@@ -197,7 +197,7 @@ async function playAlbumShuffled(album) {
 // Games-siden sin javascript:
 
 let random_int = 0 // Oppretter variablen random_int og gir den verdien 0 sånn at den er deklarert med slår av som false i løkken
-//let answer // Oppretter answer som en top string sånn at den er global
+let answer // Oppretter answer som en top string sånn at den er global
 
 function pickRandomSong(){
   if (!random_int) { // Hvis random_int = False kjøres dette:
