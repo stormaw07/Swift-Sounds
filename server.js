@@ -265,7 +265,7 @@ document.getElementById('guess').addEventListener('keydown', function (e) {
 
 function guessSong() {
   let guess = document.getElementById('guess').value
-  if (guess.toLowerCase() === answer) {
+  if (guess === answer) {
     console.log('rikitg')
   } else {
     console.log('feil')
