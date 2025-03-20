@@ -99,7 +99,7 @@ async function getAlbumData(album) {
       trackName.append(data.tracks.items[i].name) // Henter navnet fra api-en
       trackNumber.append(i+1) // Legger til hvilken nr. track det er, (+1 fodi den er 0-indeksert)
       trackDuration.append(Math.floor((data.tracks.items[i].duration_ms/1000/60) <<0),':',(Math.floor((data.tracks.items[i].duration_ms/1000) % 60) < 10 ? '0' : '') + Math.floor((data.tracks.items[i].duration_ms/1000) % 60)); // Henter ut lengden på tracksene i ms fra api-en og gjør de om til minutter og sekunder
-      track.append(trackNumber,trackName,trackDuration) // Legger til alt til raden den raden som ble opprttet
+      track.append(trackNumber,trackName,trackDuration) // Legger til alt til den raden som ble opprettet
       document.getElementById('tracklist').append(track) // Legger raden med track-info til under den forrige
     }
 
@@ -138,7 +138,6 @@ async function startPlaybackOnDevice(album, trackNr) {
     console.error("Request failed:", error);
   }
 }
-
 // Spiller av albumet fra starten:
 // startPlaybackOnDevice();
 
@@ -188,7 +187,6 @@ async function playAlbumShuffled(album) {
     console.error("An error occurred:", error);
   }
 }
-
 // Spiller av albumet i tilfeldig rekkefølge:
 // playAlbumShuffled();
 
