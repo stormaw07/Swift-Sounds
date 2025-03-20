@@ -1,5 +1,6 @@
 // API-koden:
 let accessToken = '';
+const refreshToken = 'AQC3R1a3o6sL0hEIOAG_PtqZ3VdDmdfRTGqE1pQtShZzgNM2pV9CRi0_Jjm7uo2KVc0-Jt_Q0Kixwjhdd1W1YU-s4UiyrvDfMGDRXjCeNmyfehcylF9lj6nCnKIbMyXD6Lk';
 const clientId = '06a4f77d92e745f29d2687d2700fa83e';
 const clientSecret = '8761d61fc4b2425cb90d4cc3daae0094'; 
 const redirectUri = 'http://127.0.0.1:5500';
@@ -24,8 +25,6 @@ const albumUri = [
 
 // Refresh accessToken funksjon:
 async function refreshAccessToken() {
-  const refreshToken = 'AQC3R1a3o6sL0hEIOAG_PtqZ3VdDmdfRTGqE1pQtShZzgNM2pV9CRi0_Jjm7uo2KVc0-Jt_Q0Kixwjhdd1W1YU-s4UiyrvDfMGDRXjCeNmyfehcylF9lj6nCnKIbMyXD6Lk';
-
   if (!refreshToken) {
     console.error('No refresh token available.');
     return;
