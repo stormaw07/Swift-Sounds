@@ -7,7 +7,7 @@ app.use(express.json());
 let cors = require("cors")
 app.use(cors())
 
-app.post("/", async (req, res) => {
+app.post("/songs", async (req, res) => {
     let query = `SELECT * FROM Album_songs`;
     try {
         console.log(req.body)
