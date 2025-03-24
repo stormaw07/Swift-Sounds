@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Midnights</title>
+    <title>folklore</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://use.typekit.net/lxm7zsb.css"> <!--Alle adobe fonts-->
 </head>
-<body onload="getAlbumData(9)">
+<body onload="getAlbumData(7)">
     <button class="back-button" onclick="window.location.href='/'">← Back</button>
     <div class="album-container">
         <div class="album-header">
@@ -15,10 +15,10 @@
             <div class="album-details">
                 <p id="album-label"></p>
                 <p id="album-title"></p>
-                <p class="album-meta">Taylor Swift • 2023 • 23 songs, 1 h 20 min</p>
+                <p class="album-meta">Taylor Swift • 2020 • 17 songs, 1 h 7 min</p>
                 <div class="album-actions">
-                    <button onclick="startPlaybackOnDevice(9,0)" class="play-button" >▶ Play</button>
-                    <button onclick="playAlbumShuffled(9)" class="shuffle-button">🔀 Shuffle</button>
+                    <button onclick="startPlaybackOnDevice(7,0)" class="play-button" >▶ Play</button>
+                    <button onclick="playAlbumShuffled(7)" class="shuffle-button">🔀 Shuffle</button>
                 </div>
             </div>
         </div>
@@ -36,6 +36,6 @@
             </table>
         </div>
     </div>
-    <script src="../server.js"></script>
+    <script src="../../server.js"></script>
 </body>
 </html>

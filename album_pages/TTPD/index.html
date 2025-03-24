@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>evermore</title>
+    <title>TTPD</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://use.typekit.net/lxm7zsb.css"> <!--Alle adobe fonts-->
 </head>
-<body onload="getAlbumData(8)">
+<body onload="getAlbumData(10)">
     <button class="back-button" onclick="window.location.href='/'">← Back</button>
     <div class="album-container">
         <div class="album-header">
@@ -15,10 +15,10 @@
             <div class="album-details">
                 <p id="album-label"></p>
                 <p id="album-title"></p>
-                <p class="album-meta">Taylor Swift • 2021 • 17 songs, 1 h 9 min</p>
+                <p class="album-meta">Taylor Swift • 2024 • 31 songs, 2 h 2 min</p>
                 <div class="album-actions">
-                    <button onclick="startPlaybackOnDevice(8,0)" class="play-button" >▶ Play</button>
-                    <button onclick="playAlbumShuffled(8)" class="shuffle-button">🔀 Shuffle</button>
+                    <button onclick="startPlaybackOnDevice(10,0)" class="play-button" >▶ Play</button>
+                    <button onclick="playAlbumShuffled(10)" class="shuffle-button">🔀 Shuffle</button>
                 </div>
             </div>
         </div>
@@ -36,6 +36,6 @@
             </table>
         </div>
     </div>
-    <script src="../server.js"></script>
+    <script src="../../server.js"></script>
 </body>
 </html>
