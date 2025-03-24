@@ -3,10 +3,9 @@ let accessToken = '';
 const refreshToken = 'AQC3R1a3o6sL0hEIOAG_PtqZ3VdDmdfRTGqE1pQtShZzgNM2pV9CRi0_Jjm7uo2KVc0-Jt_Q0Kixwjhdd1W1YU-s4UiyrvDfMGDRXjCeNmyfehcylF9lj6nCnKIbMyXD6Lk';
 const clientId = '06a4f77d92e745f29d2687d2700fa83e';
 const clientSecret = '8761d61fc4b2425cb90d4cc3daae0094'; 
-const redirectUri = 'http://127.0.0.1:5500';
 const tokenUrl = 'https://accounts.spotify.com/api/token';
 const deviceId = 'e112199fd21344deb7e9d4d3a02d966969ee8e38';
-let trackNr = 0
+let trackNr = 0;
 const albumUri = [
   "5eyZZoQEFQWRHkV2xgAeBw", // Taylor Swift - 0
   "4hDok0OAJd57SGIT8xuWJH", // Fearless - 1
