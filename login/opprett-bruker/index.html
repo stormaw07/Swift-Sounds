@@ -7,7 +7,42 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <div id="form">
+        <div id="step1">
+            <h1>Opprett bruker:</h1>
+            <input type="text" id="epost" placeholder="epost">
+            <p id="epostFeil"></p>
+            <input type="password" id="passord1" placeholder="passord">
+            <input type="password" id="passord2" placeholder="bekreft passord">
+            <p id="passordFeil"></p>
+            <button disabled>Neste</button>
+        </div>
+        <div id="step2">
+            <h1>Client ID & Client Secret</h1>
+            <div>
+                <p>tutorial</p>
+            </div>
+            <input type="text" id="clientID" placeholder="client id">
+            <input type="text" id="clientSecret" placeholder="client secret">
+            <button disabled>Neste</button>
+        </div>
+        <div id="step3">
+            <h1>Refresh Token</h1>
+            <div>
+                <p>tutorial</p>
+            </div>
+            <input type="text" id="refreshToken" placeholder="refresh token">
+            <button disabled>Neste</button>
+        </div>
+        <div id="step4">
+            <h1>Device ID</h1>
+            <div>
+                <p>tutorial</p>
+            </div>
+            <input type="text" id="deviceID" placeholder="device id">
+            <button>Lag bruker</button>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>

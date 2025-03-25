@@ -1,0 +1,23 @@
+body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#form {
+    display: flex;
+    flex-direction: column;
+    width: 30vw;
+    height: 20vh;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+button {
+    width: 7vw;
+    margin: 2px;
+}
+
+#feil {
+    display:none;
+}
