@@ -20,8 +20,11 @@ header {
     font-family: "neue-haas-grotesk-display", sans-serif;
     font-weight: 600;
     font-style: normal;
-    font-size: 4.5vh;
+    font-size: 2rem;
     margin: 0;
+}
+#swiftSounds{
+    font-size: 2.5rem;
 }
 #name{
     width: 60vw;
@@ -57,12 +60,7 @@ header {
     background-color:rgba(0,0,0,0);
     z-index: 10;
 }
-#headerGames{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-#headerMusic{
+#headerGames, #headerMusic, #headerAccount{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -95,10 +93,13 @@ header {
     cursor: pointer;
 }
 .show {
-    display:block;
+    display: block;
+}
+#dropDownAccount{
+    margin-top: 8px;
 }
 #dropdownMusic{
-    margin-top: 91vh;
+    margin-top: 727px;
 }
 #debut{
     font-family:'satisfaction';
@@ -166,6 +167,12 @@ header {
     font-style: normal;
     font-size: 2.5vh;
 }
+.accountText{
+    font-family: "adobe-caslon-pro", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2.5vh;
+}
 #forside{
     width: 100vw;
     display: flex;
@@ -190,4 +197,33 @@ header {
     color: #FFFCF8;
     text-align: center;
     font-size: 4vh;
+}
+#gameContainer {
+    position: absolute;
+    top: 60vh;
+    width: 100vw;
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+#pickSongButton {
+    width: 15vw;
+    height: 5vh;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(55, 124, 220);
+    color: white;
+    cursor: pointer;
+}
+#guess {
+    width: 20vw;
+    height: 5vh;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+    background-color: #fff;
+    text-align: center;
 }

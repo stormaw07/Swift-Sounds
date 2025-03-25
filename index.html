@@ -12,11 +12,11 @@
 <body>
     <header>
         <div id="name">
-            <h1 class="headerText">Swift Sounds</h1>
+            <h1 class="headerText" id="swiftSounds">Swift Sounds</h1>
         </div>
         <div id="info">
             <div class="dropdown">
-                <button onclick="dropDownMenu()" class="headerInfo" id="headerMusic">
+                <button onclick="dropDownMenuMusic()" class="headerInfo" id="headerMusic">
                     <h2 id="downArrow" class="headerText">Music</h2>
                     <p><i class="arrow down"></i></p>
                 </button>
@@ -36,18 +36,35 @@
             </div>
             <button class="headerInfo" id="headerGames">
                 <h2 class="headerText">Games</h2>
-                <p width="20vw" id="downArrow"><i class="arrow down"></i></p>
+                <p><i class="arrow down"></i></p>
             </button>
+
+            <div id="dropdown">
+                <button onclick="dropDownMenuAccount()" class="headerInfo" id="headerAccount">
+                    <h2 class="headerText">Account</h2>
+                    <p><i class="arrow down"></i></p>
+                </button>
+                <div id="dropDownAccount" class="dropdownContent">
+                    <a href="./login/log-in/"><p class="accountText">Log In</p></a>
+                    <a href="./login/create-user/"><p class="accountText">Create User</p></a>
+                </div>
+            </div>
         </div>
    </header>
+
     <div id="forside">
         <img id="forsideBilde" src="./pictures/bluedress_background.webp"/>
         <div id="sloganBox">
             <p id="slogan">The space for everything<br>Taylor swift related</p>
-            <button onclick="pickRandomSong()">alle sangene</button>
-            <input type="text" id="guess" autocomplete="off">
         </div>
     </div>
+
+    <div id="gameContainer">
+        <button onclick="pickRandomSong()" id="pickSongButton">Pick Random Song</button>
+        <input type="text" id="guess" placeholder="Guess the song!" autocomplete="off">
+    </div>
+
+
    <script src="./server.js"></script>
    <script src="./script.js"></script>
 </body>
