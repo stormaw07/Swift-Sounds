@@ -12,11 +12,11 @@
         <div id="step1" class="step">
             <h1>Create user:</h1>
             <input type="text" id="epost" placeholder="E-mail">
-            <p id="epostFeil"></p>
+            <p id="epostFeil">Enter a valid email</p>
             <input type="password" id="passord1" placeholder="Password">
             <input type="password" id="passord2" placeholder="Confirm Password">
-            <p id="passordFeil"></p>
-            <button disabled>Next</button>
+            <p id="passordFeil">Passwords do not match</p>
+            <button id="next1" onclick="completeStep1()" disabled>Next</button>
         </div>
 
         <div id="step2" class="step">
@@ -40,7 +40,7 @@
             </ol>
             <input type="text" id="clientID" placeholder="Client ID">
             <input type="text" id="clientSecret" placeholder="Client Secret">
-            <button disabled>Next</button>
+            <button id="next2" disabled>Next</button>
         </div>
 
         <div id="step3" class="step">
@@ -54,7 +54,7 @@
                 <li>Copy your Refresh Token and save the Access Token for the next step.</li>
             </ol>
             <input type="text" id="refreshToken" placeholder="Refresh Token">
-            <button disabled>Next</button>
+            <button id="next3" disabled>Next</button>
         </div>
 
         <div id="step4" class="step">
@@ -69,7 +69,7 @@
                 <li>After running the command, you'll receive a response in the terminal. Look for "id" and copy the string next to it—this is your Device ID.</li>
             </ol>
             <input type="text" id="deviceID" placeholder="Device ID">
-            <button>Create user</button>
+            <button id="submit">Create user</button>
         </div>
     </div>
 
