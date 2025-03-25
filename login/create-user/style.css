@@ -10,24 +10,6 @@ body {
     margin: 0;
 }
 
-/* Back button */
-#backButton {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    font-size: 18px;
-    color: white;
-    text-decoration: none;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 10px 15px;
-    border-radius: 8px;
-    transition: background 0.3s ease-in-out;
-}
-
-#backButton:hover {
-    background: rgba(255, 255, 255, 0.2);
-}
-
 /* Form Container */
 #form {
     background: #1e1e1e;
