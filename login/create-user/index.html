@@ -8,7 +8,7 @@
 </head>
 <body>
     <div id="form">
-        <div id="step1">
+        <div id="step1" class="step">
             <h1>Create user:</h1>
             <input type="text" id="epost" placeholder="email">
             <p id="epostFeil"></p>
@@ -17,28 +17,56 @@
             <p id="passordFeil"></p>
             <button disabled>Next</button>
         </div>
-        <div id="step2">
+
+        <div id="step2" class="step">
             <h1>Client ID & Client Secret</h1>
-            <div>
-                <p>tutorial</p>
-            </div>
-            <input type="text" id="clientID" placeholder="client id">
-            <input type="text" id="clientSecret" placeholder="client secret">
+            <h2>How to find your Client ID:</h2>
+            <ol>
+                <li>Go to: <a href="https://developer.spotify.com/" target="_blank">Spotify Developer</a></li>
+                <li>Log into a Spotify account with premium.</li>
+                <li>Click on your profile and select "Dashboard".</li>
+                <li>Click "Create App" and provide a name and description.</li>
+                <li>Under "Redirect URIs", add the local IP address where the website is hosted and this URL:  
+                    <a href="https://alecchen.dev/spotify-refresh-token/" target="_blank">Spotify Refresh Token</a></li>
+                <li>Check off "Web API" under APIs, accept the Terms of Service, and press "Save".</li>
+                <li>Once the project is created, go to its "Settings".</li>
+                <li>Your Client ID will be displayed.</li>
+            </ol>
+            <h2>How to find your Client Secret:</h2>
+            <ol>
+                <li>After getting your Client ID, click on "View client secret".</li>
+                <li>Your Client Secret will be displayed.</li>
+            </ol>
+            <input type="text" id="clientID" placeholder="Client ID">
+            <input type="text" id="clientSecret" placeholder="Client Secret">
             <button disabled>Next</button>
         </div>
-        <div id="step3">
+
+        <div id="step3" class="step">
             <h1>Refresh Token</h1>
-            <div>
-                <p>tutorial</p>
-            </div>
+            <h2>How to find your Refresh Token:</h2>
+            <ol>
+                <li>Once you have your Client ID and Client Secret, go to: <a href="https://alecchen.dev/spotify-refresh-token/" target="_blank">Spotify Token Getter</a></li>
+                <li>Enter your Client ID and Client Secret in the respective fields.</li>
+                <li>Click "Select All" to check all permission boxes, then press "Submit".</li>
+                <li>You will receive an Access Token, a Refresh Token, and an Example Output.</li>
+                <li>Copy your Refresh Token and save the Access Token for the next step.</li>
+            </ol>
             <input type="text" id="refreshToken" placeholder="refresh token">
             <button disabled>Next</button>
         </div>
-        <div id="step4">
+
+        <div id="step4" class="step">
             <h1>Device ID</h1>
-            <div>
-                <p>tutorial</p>
-            </div>
+            <h2>How to find your Device ID</h2>
+            <ol>
+                <li>To retrieve the Device ID of your current device, run the following GET request in your terminal:</li>
+                <ul>
+                    <li>curl -X "GET" "https://api.spotify.com/v1/me/player/devices" -H "Authorization: Bearer YOUR_ACCESS_TOKEN"</li>
+                    <li>Replace YOUR_ACCESS_TOKEN with the Access Token you obtained in the previous step.</li>
+                </ul>
+                <li>After running the command, you'll receive a response in the terminal. Look for "id" and copy the string next to it—this is your Device ID.</li>
+            </ol>
             <input type="text" id="deviceID" placeholder="device id">
             <button>Create user</button>
         </div>

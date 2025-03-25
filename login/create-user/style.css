@@ -1,9 +1,107 @@
-body{
-    overflow: hidden;
-    height: 100vh;
-    width: 100vw;
+ /* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: white;
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Form Container */
+#form {
+    background: #1e1e1e;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    width: 40vw;
+    text-align: center;
+}
+
+/* Step Visibility */
+.step {
+    display: none;
+}
+
+/* Headings */
+h1 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #b3b3b3;
+}
+
+/* Input Fields */
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 6px;
+    border: none;
+    background-color: #282828;
+    color: white;
+    font-size: 16px;
+}
+
+input::placeholder {
+    color: #b3b3b3;
+}
+
+/* Error Messages */
+p#epostFeil, p#passordFeil {
+    color: #ff4d4d;
+    font-size: 14px;
+}
+
+/* Buttons */
+button {
+    width: 80%;
+    padding: 12px;
+    background-color: #1db954;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background 0.3s ease-in-out;
+}
+
+button:disabled {
+    background-color: #444;
+    cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+    background-color: #17a748;
+}
+
+/* Lists */
+ol {
+    text-align: left;
+    padding-left: 20px;
+}
+
+ol li {
+    margin-bottom: 8px;
+}
+
+/* Links */
+a {
+    color: #1db954;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+#step1 {
+    display: block;
 }
