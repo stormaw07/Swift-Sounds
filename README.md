@@ -18,12 +18,22 @@ Firstly you will need to replace some variables with your own to get the API up 
 8. Your Client ID will be displayed.
 9. After getting your Client ID, click on "View client secret".
 10. Your Client Secret will be displayed.
+---
 
 #### Refresh Token
-1. 
+1. Once you have your Client ID and Client Secret, go to: https://alecchen.dev/spotify-refresh-token/
+2. Enter your Client ID and Client Secret in the respective fields.
+3. Click "Select All" to check all permission boxes, then press "Submit".
+4. You will receive an Access Token, a Refresh Token, and an Example Output.
+5. Copy your Refresh Token and save the Access Token for the next step.
+---
 
 #### Device ID
-1. 
+1. To retrieve the Device ID of your current device, run the following GET request in your terminal:
+    - curl -X "GET" "https://api.spotify.com/v1/me/player/devices" -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
+    - Replace YOUR_ACCESS_TOKEN with the Access Token you obtained in the previous step.
+2. After running the command, you'll receive a response in the terminal. Look for "id" and copy the string next to it—this is your Device ID.
+---
 
 ### Database setup
-After the API is working, the only thing remaining for the website to work perfectly is setting up the database
+After the API is working, the only thing remaining for the website to work perfectly is setting up the database.
