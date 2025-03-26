@@ -53,6 +53,31 @@ app.post("/newUser", async (req, res) => {
             }
         }
         res.json(brukerFinnes)
+        
+    } catch (error) {
+        console.log(error)
+    }
+})
+
+app.post("/login", async (req, res) => {
+    let query = `SELECT * FROM Users;`;
+    try {
+        console.log(req.body);
+        let users = await database.query(query);
+        const epost = req.body.epost;
+        const passord = req.body.passord;
+        let loggetInn = false
+        for (let i=0; i<users.length; i++ ) {
+            if (users[i].epost == epost && users[i].passord == passord) {
+                console.log('logget inn')
+                loggetInn = true
+            }
+        }
+        if (!loggetInn) {
+            console.log('Epost eller passord er feil')
+        }
+        res.json(loggetInn)
+
     } catch (error) {
         console.log(error)
     }
