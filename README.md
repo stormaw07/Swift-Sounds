@@ -30,10 +30,22 @@ Firstly you will need to replace some variables with your own to get the API up 
 
 #### Device ID
 1. To retrieve the Device ID of your current device, run the following GET request in your terminal:
-    - curl -X "GET" "https://api.spotify.com/v1/me/player/devices" -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
+    - `curl -X "GET" "https://api.spotify.com/v1/me/player/devices" -H "Authorization: Bearer YOUR_ACCESS_TOKEN"`
     - Replace YOUR_ACCESS_TOKEN with the Access Token you obtained in the previous step.
 2. After running the command, you'll receive a response in the terminal. Look for "id" and copy the string next to it—this is your Device ID.
 ---
 
 ### Database setup
-After the API is working, the only thing remaining for the website to work perfectly is setting up the database.
+After the API is working, the only thing remaining for the website to work perfectly is setting up the database. First you will have to create the database in MariaDB with all the correct columns.
+#### Creating the database
+1. First you will have to install some things and do some setup, run these commands in your terminal:
+    - `brew install mariadb`
+    - `mysql.server start`
+    - `brew services start mariadb`
+2. Then run this command and log in with the computers root password
+    - `mariadb -u root`
+3. When you're in, create a database, open it and create a table called Users and a table called Album_songs with these commands:
+    - `CREATE DATABASE Swiftle;`
+    - `USE Swiftle;`
+    - `CREATE TABLE Users (epost VARCHAR(255),passord VARCHAR (255), clientId VARCHAR(255), clientSecret VARCHAR(255), refreshToken VARCHAR(255), deviceId VARCHAR(255));`
+    - `CREATE TABLE Album_songs (album_name VARCHAR(255), track_number INT(11), track_name VARCHAR(255));`
