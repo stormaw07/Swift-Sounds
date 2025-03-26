@@ -53,7 +53,7 @@ app.post("/newUser", async (req, res) => {
             }
         }
         res.json(brukerFinnes)
-        
+
     } catch (error) {
         console.log(error)
     }
@@ -76,7 +76,15 @@ app.post("/login", async (req, res) => {
         if (!loggetInn) {
             console.log('Epost eller passord er feil')
         }
-        res.json(loggetInn)
+        let userDataQuery = `SELECT * FROM Users WHERE epost = '${epost}' AND passord = '${passord}';`;
+        let userData = await database.query(userDataQuery);
+
+        let loginResponse = {
+            loggetInn: loggetInn,
+            userData: userData
+        }
+
+        res.json(loginResponse);
 
     } catch (error) {
         console.log(error)

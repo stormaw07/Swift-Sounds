@@ -96,15 +96,15 @@ function checkStep4() {
 }
 function completeStep4() {
     newUser.deviceId = brukerDeviceID.value;
-    sendInn()
+    sendInn();
 }
-brukerDeviceID.addEventListener('input', checkStep4)
+brukerDeviceID.addEventListener('input', checkStep4);
 
 // Database connection:
 const API_URL = 'http://localhost:3000/'
 
 function sendInn() {
-    console.log(JSON.stringify(newUser))
+    console.log(JSON.stringify(newUser));
     fetch(API_URL + 'newUser', {
         method: 'POST',
         body: JSON.stringify(newUser),
@@ -122,7 +122,7 @@ function sendInn() {
         } else {
             alert('User successfully created')
             // Kode for å legge til noe i headeren eller noe (JWT?) sånn at nettsiden vet at man er logget inn
-            window.location.href = '../../'
+            window.location.href = '../../';
         }
     })
     .catch((error)=> console.error("Error:", error));
