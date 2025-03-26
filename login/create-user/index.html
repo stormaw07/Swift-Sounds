@@ -40,7 +40,7 @@
             </ol>
             <input type="text" id="clientID" placeholder="Client ID">
             <input type="text" id="clientSecret" placeholder="Client Secret">
-            <button id="next2" disabled>Next</button>
+            <button id="next2" onclick="completeStep2()" disabled>Next</button>
         </div>
 
         <div id="step3" class="step">
@@ -54,7 +54,7 @@
                 <li>Copy your Refresh Token and save the Access Token for the next step.</li>
             </ol>
             <input type="text" id="refreshToken" placeholder="Refresh Token">
-            <button id="next3" disabled>Next</button>
+            <button id="next3" onclick="completeStep3()" disabled>Next</button>
         </div>
 
         <div id="step4" class="step">
@@ -69,7 +69,7 @@
                 <li>After running the command, you'll receive a response in the terminal. Look for "id" and copy the string next to it—this is your Device ID.</li>
             </ol>
             <input type="text" id="deviceID" placeholder="Device ID">
-            <button id="submit">Create user</button>
+            <button id="submit" onclick="completeStep4()" disabled>Create user</button>
         </div>
     </div>
 

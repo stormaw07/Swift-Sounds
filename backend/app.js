@@ -28,6 +28,36 @@ app.post("/songs", async (req, res) => {
     }
 });
 
+app.post("/newUser", async (req, res) => {
+    let query = `SELECT * FROM Users;`;
+    let newUser = req.body;
+    console.log('Ny bruker:', newUser);
+    try {
+        let users = await database.query(query);
+        const epost = req.body.epost;
+        let brukerFinnes = false;
+        for (let i=0; i<users.length; i++) {
+            if (users[i].epost == epost) {
+                console.log('Epost finnes allerede');
+                brukerFinnes = true;
+            }
+        }
+        if (!brukerFinnes) {
+            console.log('Epost er gyldig');
+            try {
+                let query = `INSERT INTO Users (epost, passord, clientId, clientSecret, refreshToken, deviceId) VALUES ('${newUser.epost}', '${newUser.passord}', '${newUser.clientId}', '${newUser.clientSecret}', '${newUser.refreshToken}', '${newUser.deviceId}');`;
+                const dbResponse = await database.query(query);
+                console.log(`Ny bruker lagt til i databasen: ${newUser.epost}`)
+            } catch (error) {
+                console.log(error)
+            }
+        }
+
+    } catch (error) {
+        console.log(error)
+    }
+})
+
 
 app.listen(port, () => {
     console.log(`server running at http://localhost:${port}`);

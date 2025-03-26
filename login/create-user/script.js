@@ -46,3 +46,66 @@ brukerPassord1.addEventListener('input', checkStep1);
 brukerPassord2.addEventListener('input', checkStep1);
 
 // Step 2:
+let brukerClientID = document.getElementById('clientID');
+let brukerClientSecret = document.getElementById('clientSecret');
+let next2 = document.getElementById('next2');
+
+function checkStep2() {
+    if (brukerClientID.value.length<1 || brukerClientSecret.value.length<1) {
+        next2.disabled = true;
+    } else {
+        next2.disabled = false;
+    }
+}
+function completeStep2() {
+    newUser.clientId = brukerClientID.value;
+    newUser.clientSecret = brukerClientSecret.value;
+    step2.style.display = 'none';
+    step3.style.display = 'block';
+    console.log(newUser);
+}
+brukerClientID.addEventListener('input', checkStep2);
+brukerClientSecret.addEventListener('input', checkStep2);
+
+// Step 3:
+let brukerRefreshToken = document.getElementById('refreshToken');
+let next3 = document.getElementById('next3');
+
+function checkStep3() {
+    if (brukerRefreshToken.value.length<1) {
+        next3.disabled = true;
+    } else {
+        next3.disabled = false;
+    }
+}
+function completeStep3() {
+    newUser.refreshToken = brukerRefreshToken.value;
+    step3.style.display = 'none';
+    step4.style.display = 'block';
+    console.log(newUser);
+}
+brukerRefreshToken.addEventListener('input', checkStep3);
+
+// Step 4:
+let brukerDeviceID = document.getElementById('deviceID');
+let submit = document.getElementById('submit');
+
+function checkStep4() {
+    if (brukerDeviceID.value.length<1) {
+        submit.disabled = true;
+    } else {
+        submit.disabled = false;
+    }
+}
+function completeStep4() {
+    newUser.deviceId = brukerDeviceID.value;
+    console.log(newUser);
+    submit()
+}
+brukerDeviceID.addEventListener('input', checkStep4)
+
+// Database connection:
+
+function submit() {
+    
+}
