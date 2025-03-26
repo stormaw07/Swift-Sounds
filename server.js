@@ -262,7 +262,8 @@ document.getElementById('guess').addEventListener('keydown', function (e) {
   if (e.key === 'Enter') {
     guessSong()
   }
-})
+});
+const gameFeedback = document.getElementById('gameFeedback');
 
 function guessSong() {
   let guess = document.getElementById('guess').value
@@ -274,10 +275,14 @@ function guessSong() {
   console.log(answer);
 
   if (guess.toLowerCase() === answer.toLowerCase()) {
-    console.log('rikitg')
-    document.getElementById('guess').value = ""
+    console.log('rikitg');
+    gameFeedback.innerHTML = 'Riktig!';
+    gameFeedback.style.display = 'block';
+    document.getElementById('guess').value = "";
   } else {
-    console.log('feil')
+    console.log('feil');
+    gameFeedback.innerHTML = 'Feil :(';
+    gameFeedback.style.display = 'block';
   }
 }
 

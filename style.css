@@ -215,7 +215,7 @@ header {
     border: none;
     border-radius: 10px;
     background-color: rgb(55, 124, 220);
-    color: white;
+    color: #FFFCF8;
     cursor: pointer;
 }
 #guess {
@@ -224,6 +224,10 @@ header {
     font-size: 1rem;
     border-radius: 5px;
     border: none;
-    background-color: #fff;
+    background-color: #FFFCF8;
     text-align: center;
+}
+#gameFeedback{
+    font-size: 1rem;
+    color: #FFFCF8;
 }
