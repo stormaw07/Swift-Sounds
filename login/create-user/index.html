@@ -11,7 +11,7 @@
     <div id="form">
         <div id="step1" class="step">
             <h1>Create user:</h1>
-            <input type="text" id="epost" placeholder="E-mail">
+            <input type="text" id="epost" placeholder="E-mail" autocomplete="off">
             <p id="epostFeil">Enter a valid email</p>
             <input type="password" id="passord1" placeholder="Password">
             <input type="password" id="passord2" placeholder="Confirm Password">
@@ -38,8 +38,8 @@
                 <li>After getting your Client ID, click on "View client secret".</li>
                 <li>Your Client Secret will be displayed.</li>
             </ol>
-            <input type="text" id="clientID" placeholder="Client ID">
-            <input type="text" id="clientSecret" placeholder="Client Secret">
+            <input type="text" id="clientID" placeholder="Client ID" autocomplete="off">
+            <input type="text" id="clientSecret" placeholder="Client Secret" autocomplete="off">
             <button id="next2" onclick="completeStep2()" disabled>Next</button>
         </div>
 
@@ -53,7 +53,7 @@
                 <li>You will receive an Access Token, a Refresh Token, and an Example Output.</li>
                 <li>Copy your Refresh Token and save the Access Token for the next step.</li>
             </ol>
-            <input type="text" id="refreshToken" placeholder="Refresh Token">
+            <input type="text" id="refreshToken" placeholder="Refresh Token" autocomplete="off">
             <button id="next3" onclick="completeStep3()" disabled>Next</button>
         </div>
 
@@ -68,7 +68,7 @@
                 </ul>
                 <li>After running the command, you'll receive a response in the terminal. Look for "id" and copy the string next to it—this is your Device ID.</li>
             </ol>
-            <input type="text" id="deviceID" placeholder="Device ID">
+            <input type="text" id="deviceID" placeholder="Device ID" autocomplete="off">
             <button id="submit" onclick="completeStep4()" disabled>Create user</button>
         </div>
     </div>
