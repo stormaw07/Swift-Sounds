@@ -52,7 +52,7 @@ app.post("/newUser", async (req, res) => {
                 console.log(error)
             }
         }
-
+        res.json(brukerFinnes)
     } catch (error) {
         console.log(error)
     }

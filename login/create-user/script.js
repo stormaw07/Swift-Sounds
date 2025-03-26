@@ -39,7 +39,6 @@ function completeStep1() {
     newUser.passord = brukerPassord1.value;
     step1.style.display = 'none';
     step2.style.display = 'block';
-    console.log(newUser)
 }
 brukerEpost.addEventListener('input', checkStep1);
 brukerPassord1.addEventListener('input', checkStep1);
@@ -62,7 +61,6 @@ function completeStep2() {
     newUser.clientSecret = brukerClientSecret.value;
     step2.style.display = 'none';
     step3.style.display = 'block';
-    console.log(newUser);
 }
 brukerClientID.addEventListener('input', checkStep2);
 brukerClientSecret.addEventListener('input', checkStep2);
@@ -82,7 +80,6 @@ function completeStep3() {
     newUser.refreshToken = brukerRefreshToken.value;
     step3.style.display = 'none';
     step4.style.display = 'block';
-    console.log(newUser);
 }
 brukerRefreshToken.addEventListener('input', checkStep3);
 
@@ -99,13 +96,33 @@ function checkStep4() {
 }
 function completeStep4() {
     newUser.deviceId = brukerDeviceID.value;
-    console.log(newUser);
-    submit()
+    sendInn()
 }
 brukerDeviceID.addEventListener('input', checkStep4)
 
 // Database connection:
+const API_URL = 'http://localhost:3000/'
 
-function submit() {
-    
+function sendInn() {
+    console.log(JSON.stringify(newUser))
+    fetch(API_URL + 'newUser', {
+        method: 'POST',
+        body: JSON.stringify(newUser),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8'
+        }
+    })
+    .then(function (response) {
+        return response.json();
+    })
+    .then(data => {
+        if (data) {
+            alert('This email already has an account');
+            window.location.href = '../log-in';
+        } else {
+            alert('User successfully created')
+            window.location.href = '../../'
+        }
+    })
+    .catch((error)=> console.error("Error:", error));
 }
