@@ -121,6 +121,7 @@ function sendInn() {
             window.location.href = '../log-in';
         } else {
             alert('User successfully created')
+            // Kode for å legge til noe i headeren eller noe (JWT?) sånn at nettsiden vet at man er logget inn
             window.location.href = '../../'
         }
     })

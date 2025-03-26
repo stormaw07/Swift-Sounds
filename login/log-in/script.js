@@ -22,6 +22,7 @@ function loggInn() {
     .then (data => {
         if (data) {
             alert('Logged in successfully');
+            // Kode for å legge til noe i headeren eller noe (JWT?) sånn at nettsiden vet at man er logget inn
             window.location.href = '../../';
         } else {
             feilFelt.style.display = 'block';
