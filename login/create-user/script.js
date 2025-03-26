@@ -12,7 +12,7 @@ let step2 = document.getElementById("step2");
 let step3 = document.getElementById("step3");
 let step4 = document.getElementById("step4");
 
-// Step 1:
+// Step 1 - Email and password:
 let brukerEpost = document.getElementById("epost");
 let brukerPassord1 = document.getElementById("passord1");
 let brukerPassord2 = document.getElementById("passord2");
@@ -44,7 +44,7 @@ brukerEpost.addEventListener('input', checkStep1);
 brukerPassord1.addEventListener('input', checkStep1);
 brukerPassord2.addEventListener('input', checkStep1);
 
-// Step 2:
+// Step 2 - Client ID and Client Secret:
 let brukerClientID = document.getElementById('clientID');
 let brukerClientSecret = document.getElementById('clientSecret');
 let next2 = document.getElementById('next2');
@@ -65,7 +65,7 @@ function completeStep2() {
 brukerClientID.addEventListener('input', checkStep2);
 brukerClientSecret.addEventListener('input', checkStep2);
 
-// Step 3:
+// Step 3 - Refresh Token:
 let brukerRefreshToken = document.getElementById('refreshToken');
 let next3 = document.getElementById('next3');
 
@@ -83,7 +83,7 @@ function completeStep3() {
 }
 brukerRefreshToken.addEventListener('input', checkStep3);
 
-// Step 4:
+// Step 4 - Device ID:
 let brukerDeviceID = document.getElementById('deviceID');
 let submit = document.getElementById('submit');
 
@@ -115,7 +115,7 @@ function sendInn() {
     .then(function (response) {
         return response.json();
     })
-    .then(data => {
+    .then(data => { // Data er body-en til responsen (kommer som et objekt)
         if (data) {
             alert('This email already has an account');
             window.location.href = '../log-in';
