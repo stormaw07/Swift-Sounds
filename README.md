@@ -37,7 +37,7 @@ Firstly you will need to replace some variables with your own to get the API up 
 
 ### Database setup
 After the API is working, the only thing remaining for the website to work perfectly is setting up the database. First you will have to create the database in MariaDB with all the correct columns.
-#### Creating the database
+#### Setting up teh database
 1. First you will have to install some things and do some setup, run these commands in your terminal:
     - `brew install mariadb`
     - `mysql.server start`
@@ -58,4 +58,5 @@ After the API is working, the only thing remaining for the website to work perfe
     - DB_PASSWORD = 'your_password' (computer password if you havent made a custom one)
     - DB_NAME = 'Swiftle'
     - DB_CON_LIMIT = 5
-5. Everything should now be set up and ready to go
+---
+Everything should now be working if you followed every step correctly.
