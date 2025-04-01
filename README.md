@@ -44,8 +44,18 @@ After the API is working, the only thing remaining for the website to work perfe
     - `brew services start mariadb`
 2. Then run this command and log in with the computers root password
     - `mariadb -u root`
-3. When you're in, create a database, open it and create a table called Users and a table called Album_songs with these commands:
+3. When you're in, create a database, open it and create a table called "Users" and a table called "Album_songs" with these commands:
     - `CREATE DATABASE Swiftle;`
     - `USE Swiftle;`
     - `CREATE TABLE Users (epost VARCHAR(255),passord VARCHAR (255), clientId VARCHAR(255), clientSecret VARCHAR(255), refreshToken VARCHAR(255), deviceId VARCHAR(255));`
     - `CREATE TABLE Album_songs (album_name VARCHAR(255), track_number INT(11), track_name VARCHAR(255));`
+4. Download dotenv and express by running these commands in the terminal:
+    - `npm install dotenv`
+    - `npm install express`
+4. Head back to the project and Then create a .env file in the backend folder. In this file create the variables:
+    - DB_HOST = 'localhost'
+    - DB_USER = 'your_username' (root if you havent made one)
+    - DB_PASSWORD = 'your_password' (computer password if you havent made a custom one)
+    - DB_NAME = 'Swiftle'
+    - DB_CON_LIMIT = 5
+5. Everything should now be set up and ready to go
