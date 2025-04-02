@@ -4,8 +4,10 @@ const app = express();
 const port = 3000;
 const database = require('./dbconnector.js')
 app.use(express.json());
-let cors = require("cors")
-app.use(cors())
+let cors = require("cors");
+app.use(cors());
+const bcrypt = require('bcryptjs');
+const crypto = require('crypto');
 
 app.post("/songs", async (req, res) => {
     let query = `SELECT * FROM Album_songs`;
@@ -35,9 +37,17 @@ app.post("/newUser", async (req, res) => {
     try {
         let users = await database.query(query);
         const epost = req.body.epost;
+
+        const hashedEpost = crypto.createHash('sha256').update(newUser.epost).digest('hex');
+        const hashedPassord = await bcrypt.hash(newUser.passord, 10);
+        const hashedClientID = crypto.createHash('sha256').update(newUser.clientId).digest('hex');
+        const hashedClientSecret = crypto.createHash('sha256').update(newUser.clientSecret).digest('hex');
+        const hashedRefreshToken = crypto.createHash('sha256').update(newUser.refreshToken).digest('hex');
+        const hashedDeviceId = crypto.createHash('sha256').update(newUser.deviceId).digest('hex');
+
         let brukerFinnes = false;
         for (let i=0; i<users.length; i++) {
-            if (users[i].epost == epost) {
+            if (users[i].epost == hashedEpost) {
                 console.log('Epost finnes allerede');
                 brukerFinnes = true;
             }
@@ -45,7 +55,7 @@ app.post("/newUser", async (req, res) => {
         if (!brukerFinnes) {
             console.log('Epost er gyldig');
             try {
-                let query = `INSERT INTO Users (epost, passord, clientId, clientSecret, refreshToken, deviceId) VALUES ('${newUser.epost}', '${newUser.passord}', '${newUser.clientId}', '${newUser.clientSecret}', '${newUser.refreshToken}', '${newUser.deviceId}');`;
+                let query = `INSERT INTO Users (epost, passord, clientId, clientSecret, refreshToken, deviceId) VALUES ('${hashedEpost}', '${hashedPassord}', '${hashedClientID}', '${hashedClientSecret}', '${hashedRefreshToken}', '${hashedDeviceId}');`;
                 const dbResponse = await database.query(query);
                 console.log(`Ny bruker lagt til i databasen: ${newUser.epost}`)
             } catch (error) {
@@ -67,8 +77,11 @@ app.post("/login", async (req, res) => {
         const epost = req.body.epost;
         const passord = req.body.passord;
         let loggetInn = false
+        const hashedEpost = crypto.createHash('sha256').update(epost).digest('hex');
+
         for (let i=0; i<users.length; i++ ) {
-            if (users[i].epost == epost && users[i].passord == passord) {
+            let passordMatch = await bcrypt.compare(passord, users[i].passord)
+            if (users[i].epost == hashedEpost && passordMatch) {
                 console.log('logget inn')
                 loggetInn = true
             }
@@ -76,15 +89,14 @@ app.post("/login", async (req, res) => {
         if (!loggetInn) {
             console.log('Epost eller passord er feil')
         }
-        let userDataQuery = `SELECT * FROM Users WHERE epost = '${epost}' AND passord = '${passord}';`;
-        let userData = await database.query(userDataQuery);
+        // let userDataQuery = `SELECT * FROM Users WHERE epost = '${epost}' AND passord = '${passord}';`;
+        // let userData = await database.query(userDataQuery);
+        // let loginResponse = {
+        //     loggetInn: loggetInn,
+        //     userData: userData
+        // }
 
-        let loginResponse = {
-            loggetInn: loggetInn,
-            userData: userData
-        }
-
-        res.json(loginResponse);
+        res.json(loggetInn);
 
     } catch (error) {
         console.log(error)
