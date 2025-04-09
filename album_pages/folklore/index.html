@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>folklore</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="https://use.typekit.net/lxm7zsb.css"> <!--Alle adobe fonts-->
 </head>
 <body onload="getAlbumData(7)">
-    <button class="back-button" onclick="window.location.href='/'">← Back</button>
+    <button id="folkloreback" class="back-button" onclick="window.location.href='/'">← Back</button>
     <div class="album-container">
         <div class="album-header">
             <img id="bilde" alt="folklore Album Cover" class="album-cover">
@@ -17,8 +17,8 @@
                 <p id="album-title"></p>
                 <p class="album-meta">Taylor Swift • 2020 • 17 songs, 1 h 7 min</p>
                 <div class="album-actions">
-                    <button onclick="startPlaybackOnDevice(7,0)" class="play-button" >▶ Play</button>
-                    <button onclick="playAlbumShuffled(7)" class="shuffle-button">🔀 Shuffle</button>
+                    <button id="folkloreplay" onclick="startPlaybackOnDevice(7,0)" class="play-button" >▶ Play</button>
+                    <button id="folkloreshuffle" onclick="playAlbumShuffled(7)" class="shuffle-button">🔀 Shuffle</button>
                 </div>
             </div>
         </div>

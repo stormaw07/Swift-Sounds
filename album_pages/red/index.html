@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Red</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="https://use.typekit.net/lxm7zsb.css"> <!--Alle adobe fonts-->
 </head>
 <body onload="getAlbumData(3)">
-    <button class="back-button" onclick="window.location.href='/'">← Back</button>
+    <button id="redback" class="back-button" onclick="window.location.href='/'">← Back</button>
     <div class="album-container">
         <div class="album-header">
             <img id="bilde" alt="Red Album Cover" class="album-cover">
@@ -17,8 +17,8 @@
                 <p id="album-title"></p>
                 <p class="album-meta">Taylor Swift • 2021 • 30 songs, 2 h 10 min</p>
                 <div class="album-actions">
-                    <button onclick="startPlaybackOnDevice(3,0)" class="play-button" >▶ Play</button>
-                    <button onclick="playAlbumShuffled(3)" class="shuffle-button">🔀 Shuffle</button>
+                    <button id="redplay" onclick="startPlaybackOnDevice(3,0)" class="play-button" >▶ Play</button>
+                    <button id="redshuffle" onclick="playAlbumShuffled(3)" class="shuffle-button">🔀 Shuffle</button>
                 </div>
             </div>
         </div>

@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>1989</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="https://use.typekit.net/lxm7zsb.css"> <!--Alle adobe fonts-->
 </head>
 <body onload="getAlbumData(4)">
-    <button class="back-button" onclick="window.location.href='/'">← Back</button>
+    <button id="nineteen89back" class="back-button" onclick="window.location.href='/'">← Back</button>
     <div class="album-container">
         <div class="album-header">
             <img id="bilde" alt="1989 Album Cover" class="album-cover">
@@ -17,8 +17,8 @@
                 <p id="album-title"></p>
                 <p class="album-meta">Taylor Swift • 2023 • 22 songs, 1 h 21 min</p>
                 <div class="album-actions">
-                    <button onclick="startPlaybackOnDevice(4,0)" class="play-button" >▶ Play</button>
-                    <button onclick="playAlbumShuffled(4)" class="shuffle-button">🔀 Shuffle</button>
+                    <button id="nineteen89play" onclick="startPlaybackOnDevice(4,0)" class="play-button" >▶ Play</button>
+                    <button id="nineteen89shuffle" onclick="playAlbumShuffled(4)" class="shuffle-button">🔀 Shuffle</button>
                 </div>
             </div>
         </div>

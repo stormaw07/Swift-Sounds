@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>reputation</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="https://use.typekit.net/lxm7zsb.css"> <!--Alle adobe fonts-->
 </head>
 <body onload="getAlbumData(5)">
-    <button class="back-button" onclick="window.location.href='/'">← Back</button>
+    <button id="reputationback" class="back-button" onclick="window.location.href='/'">← Back</button>
     <div class="album-container">
         <div class="album-header">
             <img id="bilde" alt="reputation Album Cover" class="album-cover">
@@ -17,8 +17,8 @@
                 <p id="album-title"></p>
                 <p class="album-meta">Taylor Swift • 2017 • 15 songs, 55 min 45 sec</p>
                 <div class="album-actions">
-                    <button onclick="startPlaybackOnDevice(5,0)" class="play-button" >▶ Play</button>
-                    <button onclick="playAlbumShuffled(5)" class="shuffle-button">🔀 Shuffle</button>
+                    <button id="reputationplay" onclick="startPlaybackOnDevice(5,0)" class="play-button" >▶ Play</button>
+                    <button id="reputationshuffle" onclick="playAlbumShuffled(5)" class="shuffle-button">🔀 Shuffle</button>
                 </div>
             </div>
         </div>
