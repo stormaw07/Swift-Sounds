@@ -1,7 +1,28 @@
 // Dropdown menu:
+
+let body = document.getElementById('body')
+let musicMenu = document.getElementById('dropdownMusic')
+let accountMenu = document.getElementById('dropDownAccount')
+
+
 function dropDownMenuMusic() {
-  document.getElementById("dropdownMusic").classList.toggle("show")
+  musicMenu.classList.toggle("show")
+  accountMenu.classList.remove("show")
 }
+
 function dropDownMenuAccount() {
-  document.getElementById("dropDownAccount").classList.toggle("show")
+  accountMenu.classList.toggle("show")
+  musicMenu.classList.remove("show")
 }
+
+document.addEventListener('click', function (event) {
+  const isClickInsideMusic = musicMenu.contains(event.target) || document.getElementById('headerMusic').contains(event.target)
+  const isClickInsideAccount = accountMenu.contains(event.target) || document.getElementById('headerAccount').contains(event.target)
+
+  if (!isClickInsideMusic) {
+    musicMenu.classList.remove("show")
+  }
+  if (!isClickInsideAccount) {
+    accountMenu.classList.remove("show")
+  }
+})
