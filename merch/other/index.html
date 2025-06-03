@@ -4,8 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Merch - Other</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://use.typekit.net/lxm7zsb.css"> <!--Alle adobe fonts-->
+    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/soulmate"> <!--Lover-->
+    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/satisfaction"> <!--Taylor Swift-->
 </head>
 <body>
-    
+    <header>
+        <div id="name">
+            <a href="/"><h1 class="headerText" id="swiftSounds">Swift Sounds</h1></a>
+        </div>
+        <div id="info">
+            <div>
+                <button onclick="dropDownMenuMusic()" class="headerInfo" id="headerMusic">
+                    <h2 id="downArrow" class="headerText">Music</h2>
+                    <p><i class="arrow down"></i></p>
+                </button>
+                <div id="dropdownMusic" class="dropdownContent">
+                    <a href="../../album_pages/debut/"><p id="debut">Taylor Swift</p></a>
+                    <a href="../../album_pages/fearless/"><p id="fearless">Fearless</p></a>
+                    <a href="../../album_pages/speak_now/"><p id="speakNow">Speak Now</p></a>
+                    <a href="../../album_pages/red/"><p id="red">RED</p></a>
+                    <a href="../../album_pages/1989/"><p id="nineteen89">1989</p></a>
+                    <a href="../../album_pages/reputation/"><p id ="reputation">reputation</p></a>
+                    <a href="../../album_pages/lover/"><p id="lover">Lover</p></a>
+                    <a href="../../album_pages/folklore/"><p id="folklore">folklore</p></a>
+                    <a href="../../album_pages/evermore/"><p id="evermore">evermore</p></a>
+                    <a href="../../album_pages/midnights/"><p id="midnights">Midnights</p></a>
+                    <a href="../../album_pages/TTPD/"><p id="ttpd">The Tortured Poets Department</p></a>
+                </div>
+            </div>
+            
+            <div>
+                <button onclick="dropDownMenuMerch()" class="headerInfo" id="headerMerch">
+                    <h2 class="headerText">Merch</h2>
+                    <p><i class="arrow down"></i></p>
+                </button>
+                <div id="dropDownMerch" class="dropdownContent">
+                    <a href="../music/"><p class="dropDownText">Music</p></a>
+                    <a href="../other/"><p class="dropDownText">Other</p></a>
+                    <a href="../cart/"><p class="dropDownText">Cart</p></a>
+                </div>
+            </div>
+
+            <div>
+                <button onclick="dropDownMenuAccount()" class="headerInfo" id="headerAccount">
+                    <h2 class="headerText">Account</h2>
+                    <p><i class="arrow down"></i></p>
+                </button>
+                <div id="dropDownAccount" class="dropdownContent">
+                    <a href="../../login/log-in/"><p class="dropDownText">Log In</p></a>
+                    <a href="../../login/create-user/"><p class="dropDownText">Create User</p></a>
+                </div>
+            </div>
+        </div>
+   </header>
+
+
+
+   <script src="../../script.js"></script>
 </body>
 </html>
