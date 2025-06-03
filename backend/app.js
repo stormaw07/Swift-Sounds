@@ -89,13 +89,6 @@ app.post("/login", async (req, res) => {
         if (!loggetInn) {
             console.log('Epost eller passord er feil')
         }
-        // let userDataQuery = `SELECT * FROM Users WHERE epost = '${epost}' AND passord = '${passord}';`;
-        // let userData = await database.query(userDataQuery);
-        // let loginResponse = {
-        //     loggetInn: loggetInn,
-        //     userData: userData
-        // }
-
         res.json(loggetInn);
 
     } catch (error) {
