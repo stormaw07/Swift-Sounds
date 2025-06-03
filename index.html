@@ -15,7 +15,7 @@
             <h1 class="headerText" id="swiftSounds">Swift Sounds</h1>
         </div>
         <div id="info">
-            <div class="dropdown">
+            <div>
                 <button onclick="dropDownMenuMusic()" class="headerInfo" id="headerMusic">
                     <h2 id="downArrow" class="headerText">Music</h2>
                     <p><i class="arrow down"></i></p>
@@ -34,19 +34,27 @@
                     <a href="./album_pages/TTPD/"><p id="ttpd">The Tortured Poets Department</p></a>
                 </div>
             </div>
-            <button class="headerInfo" id="headerMerch">
-                <h2 class="headerText">Merch</h2>
-                <p><i class="arrow down"></i></p>
-            </button>
+            
+            <div>
+                <button onclick="dropDownMenuMerch()" class="headerInfo" id="headerMerch">
+                    <h2 class="headerText">Merch</h2>
+                    <p><i class="arrow down"></i></p>
+                </button>
+                <div id="dropDownMerch" class="dropdownContent">
+                    <a href="./merch/music/"><p class="dropDownText">Music</p></a>
+                    <a href="./merch/other/"><p class="dropDownText">Other</p></a>
+                    <a href="./merch/cart/"><p class="dropDownText">Cart</p></a>
+                </div>
+            </div>
 
-            <div id="dropdown">
+            <div>
                 <button onclick="dropDownMenuAccount()" class="headerInfo" id="headerAccount">
                     <h2 class="headerText">Account</h2>
                     <p><i class="arrow down"></i></p>
                 </button>
                 <div id="dropDownAccount" class="dropdownContent">
-                    <a href="./login/log-in/"><p class="accountText">Log In</p></a>
-                    <a href="./login/create-user/"><p class="accountText">Create User</p></a>
+                    <a href="./login/log-in/"><p class="dropDownText">Log In</p></a>
+                    <a href="./login/create-user/"><p class="dropDownText">Create User</p></a>
                 </div>
             </div>
         </div>

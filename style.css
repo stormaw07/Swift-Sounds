@@ -71,14 +71,10 @@ header {
     background-color: #FFFCF8;
     width: 20vw;
     z-index: 1;
+    margin-top: 8px;
 }
 .headerInfo:hover, .dropbtn:focus {
     background-color: gainsboro;
-}
-.dropdown{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
 }
 .dropdownContent a{
     color: black;
@@ -94,12 +90,6 @@ header {
 }
 .show {
     display: block;
-}
-#dropDownAccount{
-    margin-top: 8px;
-}
-#dropdownMusic{
-    margin-top: 727px;
 }
 #debut{
     font-family:'satisfaction';
@@ -167,7 +157,7 @@ header {
     font-style: normal;
     font-size: 2.5vh;
 }
-.accountText{
+.dropDownText{
     font-family: "adobe-caslon-pro", serif;
     font-weight: 400;
     font-style: normal;
