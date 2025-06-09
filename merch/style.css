@@ -1,183 +1,111 @@
-/* Header css (from main page): */
-body{
-    overflow-x: hidden;
-    margin: 0;
-    background-color: #FFFCF8;
+body {
+  overflow-x: hidden;
+  margin: 0;
+  background-color: #FFFCF8;
 }
-a{
-    text-decoration: none;
+a {
+  text-decoration: none;
 }
 header {
-    width: 100vw;
-    height: 10vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0px 1px 10px;
-    position: fixed;
-    z-index: 10;
-    background-color: #FFFCF8;
-} 
+  width: 100vw;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 1px 10px;
+  position: fixed;
+  z-index: 10;
+  background-color: #FFFCF8;
+}
 .headerText {
-    font-family: "neue-haas-grotesk-display", sans-serif;
-    font-weight: 600;
-    font-style: normal;
-    font-size: 2rem;
-    margin: 0;
-    color: black;
+  font-family: "neue-haas-grotesk-display", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 2rem;
+  margin: 0;
+  color: black;
 }
-#swiftSounds{
-    font-size: 2.5rem;
+#swiftSounds {
+  font-size: 2.5rem;
 }
-#name{
-    width: 60vw;
-    margin-left: 5vw;
+#name {
+  width: 60vw;
+  margin-left: 5vw;
 }
-#info{
-    width: 40vw;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-right: 5vw;
+#info {
+  width: 40vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-right: 5vw;
 }
 .arrow {
-    border: solid black;
-    border-width: 0 3px 3px 0;
-    display: inline-block;
-    padding: 3px;
-    margin-left: 1vw;
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  margin-left: 1vw;
 }
 .down {
-    transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
 }
-.headerInfo{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    height: 8vh;
-    width: 12vw;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    background-color:rgba(0,0,0,0);
-    z-index: 10;
+.headerInfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 8vh;
+  width: 12vw;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 10;
 }
-#headerMerch, #headerMusic, #headerAccount{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+#headerMerch, #headerMusic, #headerAccount {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .dropdownContent {
-    display: none;
-    position: absolute;
-    background-color: #FFFCF8;
-    width: 20vw;
-    z-index: 1;
-    margin-top: 8px;
+  display: none;
+  position: absolute;
+  background-color: #FFFCF8;
+  width: 20vw;
+  z-index: 1;
+  margin-top: 8px;
 }
 .headerInfo:hover, .dropbtn:focus {
-    background-color: gainsboro;
+  background-color: gainsboro;
 }
-.dropdownContent a{
-    color: black;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    padding-left: 1vw;
-    height: 7.41vh;
+.dropdownContent a {
+  color: black;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  padding-left: 1vw;
+  height: 7.41vh;
 }
 .dropdownContent a:hover {
-    background-color: #ddd;
-    cursor: pointer;
+  background-color: #ddd;
+  cursor: pointer;
 }
 .show {
-    display: block;
+  display: block;
 }
-#debut{
-    font-family:'satisfaction';
-    font-style:normal;
-    font-weight:400;
-    font-size: 3vh;
-}
-#fearless{
-    font-family: "quiche-sans", sans-serif;
-    font-weight: 300;
-    font-style: normal;
-    font-size: 3vh;
-}
-#speakNow{
-    font-family: "mina", serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 2.5vh;
-}
-#red{
-    font-family: "futura-pt-condensed", sans-serif;
-    font-weight: 500;
-    font-style: normal;
-    font-size: 3.5vh;
-}
-#nineteen89{
-    font-family: "permanent-marker", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 3vh;
-}
-#reputation{
-    font-family: "carol-gothic", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 3vh;
-}
-#lover{
-    font-family: 'Soulmate';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 3vh;
-}
-#folklore{
-    font-family: "de-walpergens-pica", sans-serif;
-    font-weight: 400;
-    font-style: italic;
-    font-size: 3vh;
-}
-#evermore{
-    font-family: "de-walpergens-pica", sans-serif;
-    font-weight: 400;
-    font-style: italic;
-    font-size: 3vh;
-}
-#midnights{
-    font-family: "neue-haas-grotesk-display", sans-serif;
-    font-weight: 600;
-    font-style: normal;
-    font-size: 3vh;
-}
-#ttpd{
-    font-family: "adobe-caslon-pro", serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 2.5vh;
-}
-.dropDownText{
-    font-family: "adobe-caslon-pro", serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 2.5vh;
-}
+#debut { font-family:'satisfaction'; font-size: 3vh; }
+#fearless { font-family: "quiche-sans", sans-serif; font-size: 3vh; }
+#speakNow { font-family: "mina", serif; font-size: 2.5vh; }
+#red { font-family: "futura-pt-condensed", sans-serif; font-size: 3.5vh; }
+#nineteen89 { font-family: "permanent-marker", sans-serif; font-size: 3vh; }
+#reputation { font-family: "carol-gothic", sans-serif; font-size: 3vh; }
+#lover { font-family: 'Soulmate'; font-size: 3vh; }
+#folklore, #evermore { font-family: "de-walpergens-pica", sans-serif; font-style: italic; font-size: 3vh; }
+#midnights { font-family: "neue-haas-grotesk-display", sans-serif; font-size: 3vh; }
+#ttpd { font-family: "adobe-caslon-pro", serif; font-size: 2.5vh; }
+.dropDownText { font-family: "adobe-caslon-pro", serif; font-size: 2.5vh; }
 
-/* Main css: */
-/* #shop{
-    width: 100vw;
-    height: 200vh;
-    padding-top: 10vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
- /* Chat: */
-
+/* Product grid layout */
 .shop-container {
   padding-top: 15vh;
   max-width: 1200px;
@@ -186,68 +114,65 @@ header {
   padding-right: 2rem;
   box-sizing: border-box;
 }
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+.product-card {
+  background: #FFFCF8;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+.product-card:hover {
+  transform: scale(1.02);
+}
+.image-container {
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+.image-container img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+.product-card h2 {
+  font-size: 1.25rem;
+  margin: 1rem 0 0.5rem;
+}
+.price {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+.add-to-cart {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.add-to-cart:hover {
+  background-color: #0056b3;
+}
 
-
+/* Responsive */
+@media (max-width: 768px) {
   .product-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    grid-template-columns: repeat(2, 1fr);
   }
-
-  .product-card {
-    background: #FFFCF8;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    padding: 1.5rem;
-    text-align: center;
-    transition: transform 0.2s ease;
+}
+@media (max-width: 480px) {
+  .product-grid {
+    grid-template-columns: 1fr;
   }
-
-  .product-card:hover {
-    transform: scale(1.02);
-  }
-
-  .product-card img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    object-fit: cover;
-  }
-
-  .product-card h2 {
-    font-size: 1.25rem;
-    margin: 1rem 0 0.5rem;
-  }
-
-  .price {
-    font-size: 1.1rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-  }
-
-  .add-to-cart {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 0.75rem 1.5rem;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-  }
-
-  .add-to-cart:hover {
-    background-color: #0056b3;
-  }
-
-  /* Responsive tweak for smaller screens */
-  @media (max-width: 768px) {
-    .product-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  @media (max-width: 480px) {
-    .product-grid {
-      grid-template-columns: 1fr;
-    }
-  }
+}
