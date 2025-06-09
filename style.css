@@ -207,6 +207,10 @@ header {
     background-color: rgb(55, 124, 220);
     color: #FFFCF8;
     cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+#pickSongButton:hover {
+    background-color: #0056b3;
 }
 #guess {
     width: 20vw;
