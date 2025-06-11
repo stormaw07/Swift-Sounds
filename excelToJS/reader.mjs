@@ -17,7 +17,7 @@ async function main() {
         console.log('Success');
 
         // Les Excel-filen
-        const workbook = XLSX.readFile('Merch.xlsx');
+        const workbook = XLSX.readFile('taylor_all_album_songs.xlsx');
         const sheet = workbook.Sheets['Ark1'];
         const jsonData = XLSX.utils.sheet_to_json(sheet);
 
@@ -25,9 +25,9 @@ async function main() {
         console.log(jsonData); // Debugging: Se hvordan dataene ser ut
 
         for (let row of jsonData) {
-            const query = `INSERT INTO Merch (id, name, url, price, type) VALUES (?, ?, ?, ?, ?)`;
-            await conn.query(query, [row.id, row.name, row.url, row.price, row.type]);
-            console.log(`Inserted: ${row.id}, ${row.name}, ${row.url}, ${row.price}, ${row.type}`);
+            const query = `INSERT INTO Album_songs (album_name, track_number, track_name) VALUES (?, ?, ?)`;
+            await conn.query(query, [row.album_name, row.track_number, row.track_name]);
+            console.log(`Inserted: ${row.album_name}, ${row.track_number}, ${row.track_name}`);
         }
 
     } catch (err) {
