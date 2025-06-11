@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/soulmate"> <!--Lover-->
     <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/satisfaction"> <!--Taylor Swift-->
 </head>
-<body>
+<body onload="getMerchItems('other')">
     <header>
         <div id="name">
             <a href="/"><h1 class="headerText" id="swiftSounds">Swift Sounds</h1></a>
@@ -62,12 +62,13 @@
 
 
    <div class="shop-container">
-        <div class="product-grid">
+        <div class="product-grid" id="shopItems">
             
         </div>
    </div>
 
 
    <script src="../../script.js"></script>
+   <script src="../script.js"></script>
 </body>
 </html>

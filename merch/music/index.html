@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/soulmate"> <!--Lover-->
     <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/satisfaction"> <!--Taylor Swift-->
 </head>
-<body>
+<body onload="getMerchItems('music')">
   <!-- Header -->
     <header>
         <div id="name">
@@ -63,9 +63,8 @@
 
   <!-- Shop layout -->
     <div class="shop-container">
-        <div class="product-grid">
-
-            <!-- Product 1 -->
+        <div class="product-grid" id="shopItems">
+            
             <div class="product-card">
                 <div class="image-container">
                     <img src="https://www.platekompaniet.no/pimcorecdn/Products/Music/LP/LPF/0843930021154.png?auto=webp&format=png&width=960&height=960&fit=cover" alt="Product 1">
@@ -75,7 +74,6 @@
                 <button class="add-to-cart">Add to Cart</button>
             </div>
 
-            <!-- Product 2 -->
             <div class="product-card">
                 <div class="image-container">
                     <img src="https://images.squarespace-cdn.com/content/v1/5f4a6763a23dbb3ab86255f7/324e02e6-482d-4623-8a20-6df32f9646c5/91.png" alt="Product 2">
@@ -85,7 +83,6 @@
                 <button class="add-to-cart">Add to Cart</button>
             </div>
 
-            <!-- Product 3 -->
             <div class="product-card">
                 <div class="image-container">
                     <img src="https://store.taylorswift.com/cdn/shop/files/xDn4hZFEqGdJ30xLjXeL6AXpNLxj3rS8.png?v=1744214271&width=550" alt="Product 3">
@@ -94,39 +91,11 @@
                 <p class="price">$29.99</p>
                 <button class="add-to-cart">Add to Cart</button>
             </div>
-
-            <!-- Product 4 -->
-            <div class="product-card">
-                <div class="image-container">
-                    <img src="https://via.placeholder.com/200x200" alt="Product 4">
-                </div>
-                <h2>Product 4</h2>
-                <p class="price">$15.99</p>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
-
-            <!-- Product 5 -->
-            <div class="product-card">
-                <div class="image-container">
-                    <img src="https://via.placeholder.com/200x200" alt="Product 5">
-                </div>
-                <h2>Product 5</h2>
-                <p class="price">$34.99</p>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
-
-            <!-- Product 6 -->
-            <div class="product-card">
-                <div class="image-container">
-                    <img src="https://via.placeholder.com/200x200" alt="Product 6">
-                </div>
-                <h2>Product 6</h2>
-                <p class="price">$9.99</p>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
+       
         </div>
     </div>
 
   <script src="../../script.js"></script>
+  <script src="../script.js"></script>
 </body>
 </html>
