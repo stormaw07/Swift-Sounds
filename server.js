@@ -232,6 +232,7 @@ async function pickRandomTrackNr(random_int) {
   }
 }
 
+// Database fetch:
 function getSongsFromDatabase(album_name, track_number) {
   const API_URL = 'http://localhost:3000/songs'
 
