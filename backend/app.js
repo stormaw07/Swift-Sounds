@@ -116,6 +116,23 @@ app.get("/other", async (req, res) => {
     }
 });
 
+app.post("/orders", async (req, res) => {
+    let query = `INSERT INTO Orders (items, total) VALUES (?, ?)`;
+    let newOrder = req.body;
+    console.log('New order:',newOrder)
+
+    const itemsJSON = JSON.stringify(newOrder.items)
+    const total = newOrder.total
+    
+    try {
+        const dbResponse = await database.query(query, [itemsJSON, total]);
+        console.log('Order saved to the databse:', dbResponse);
+    } catch (error) {
+        console.log(error)
+    }
+    res.json(newOrder)
+})
+
 
 app.listen(port, () => {
     console.log(`server running at http://localhost:${port}`);
