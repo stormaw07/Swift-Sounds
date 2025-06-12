@@ -34,3 +34,14 @@ function loadCart() {
     }
 };
 loadCart();
+
+function removeItem(itemID) {
+    for (let i=0; i<cart.length; i++) {
+        if (cart[i].id == itemID) {
+            cart.splice(i, 1);
+            console.log(cart);
+            localStorage.setItem('cart', JSON.stringify(cart));
+        }
+    }
+    loadCart();
+};
