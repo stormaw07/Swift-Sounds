@@ -49,14 +49,19 @@ After the API is working, the only thing remaining for the website to work perfe
     - `USE Swiftle;`
     - `CREATE TABLE Users (epost VARCHAR(255),passord VARCHAR (255), clientId VARCHAR(255), clientSecret VARCHAR(255), refreshToken VARCHAR(255), deviceId VARCHAR(255));`
     - `CREATE TABLE Album_songs (album_name VARCHAR(255), track_number INT(11), track_name VARCHAR(255));`
+    - `CREATE TABLE Merch (id INT, name VARCHAR(255), url VARCHAR(255), price SMALLINT, type VARCHAR(255))`
+    - `CREATE TABLE Orders (id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, items JSON, total INT);`
 4. Download dotenv and express by running these commands in the terminal:
     - `npm install dotenv`
     - `npm install express`
-4. Head back to the project and Then create a .env file in the backend folder. In this file create the variables:
+5. Head back to the project and Then create a .env file in the backend folder. In this file create the variables:
     - DB_HOST = 'localhost'
     - DB_USER = 'your_username' (root if you havent made one)
     - DB_PASSWORD = 'your_password' (computer password if you havent made a custom one)
     - DB_NAME = 'Swiftle'
     - DB_CON_LIMIT = 5
+6. Fill the Merch and Album_songs databases with data from the excel sheets by making your way into the /excelToJs folder and run thses commands:
+    - `node merchReader.mjs`
+    - `node songReader.mjs`
 ---
-Everything should now be working if you followed every step correctly.
+Everything should now be working if you've followed every step correctly.
