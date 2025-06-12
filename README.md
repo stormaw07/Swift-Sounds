@@ -1,5 +1,5 @@
 # Swift Sounds
-A website where i use Spotify's API to create a music-library for every Taylor Swift album. You can also listen to the albums through the website. I am currently working on a login function and a game where you try to guess what song is being played.
+A website where i use Spotify's API to create a music-library for every Taylor Swift album. You can listen to the albums both normally or shuffles through the website. There is a guess the song game on the front page where you can press a button to get a song and have to guess which one it is. There is a login system where you can create a user for the website by following a complex tutorial below on hwo to get all of the necessary credentials to use the page. I have also added a merch store split into to sections, one for music, and one for other items. There you can add items to your cart and manage the cart and purchase the items on the cart page.
 
 ## How to use 
 To use the website for yourself there's a couple of things you need to replace and prepare.
