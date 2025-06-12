@@ -15,7 +15,7 @@ function getMerchItems(type) {
             <div class="image-container"><img src=${data[i].url} alt=${data[i].name}></div>
             <h2>${data[i].name}</h2>
             <p class="price">${data[i].price} kr</p>
-            <button class='add-to-cart' onclick="addToCart(${i})">Add to Cart</button>`; //Oppretter html koden for itemene
+            <button class='add-to-cart' onclick="addToCart(${i})">Add to Cart</button></div>`; //Oppretter html koden for itemene
             shop.innerHTML += product; //Legger til ett og ett item på nettsiden
         };
     })
