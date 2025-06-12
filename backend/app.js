@@ -96,7 +96,7 @@ app.post("/login", async (req, res) => {
     }
 })
 
-app.post("/music", async (req, res) => {
+app.get("/music", async (req, res) => {
     let query = 'SELECT * FROM Merch WHERE type="music"'; //Henter bare ut musikk produktene
     try {
         let musicMerch = await database.query(query);
@@ -106,7 +106,7 @@ app.post("/music", async (req, res) => {
     }
 });
 
-app.post("/other", async (req, res) => {
+app.get("/other", async (req, res) => {
     let query = 'SELECT * FROM Merch WHERE type="other"'; //Henter bare ut de andre produktene
     try {
         let otherMerch = await database.query(query);
