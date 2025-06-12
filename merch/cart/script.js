@@ -21,9 +21,9 @@ function loadCart() {
             <h3>${cart[i].name}</h3>
             <p>Price: ${cart[i].price} kr</p>
             <div class="quantity-controls">
-            <button title="Decrease Quantity">-</button>
+            <button title="Decrease Quantity" onclick="decreaseAmount(${cart[i].id})">-</button>
             <span>${cart[i].quantity}</span>
-            <button title="Increase Quantity">+</button>
+            <button title="Increase Quantity" onclick="increaseAmount(${cart[i].id})">+</button>
             </div></div></div>`;
             summaryHTML += `<div class="summary-item">${cart[i].name} (${cart[i].quantity}x)<span class="price">${cart[i].price} kr</span>`;
             sum += (cart[i].price * cart[i].quantity);
@@ -40,6 +40,24 @@ function removeItem(itemID) {
         if (cart[i].id == itemID) {
             cart.splice(i, 1);
             console.log(cart);
+            localStorage.setItem('cart', JSON.stringify(cart));
+        }
+    }
+    loadCart();
+};
+function decreaseAmount(itemID) {
+    for (let i=0; i<cart.length; i++){
+        if (cart[i].id == itemID) {
+            cart[i].quantity -= 1;
+            localStorage.setItem('cart', JSON.stringify(cart));
+        }
+    }
+    loadCart();
+};
+function increaseAmount(itemID) {
+    for (let i=0; i<cart.length; i++){
+        if (cart[i].id == itemID) {
+            cart[i].quantity += 1;
             localStorage.setItem('cart', JSON.stringify(cart));
         }
     }
