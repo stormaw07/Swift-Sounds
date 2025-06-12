@@ -70,6 +70,41 @@ function increaseAmount(itemID) {
     loadCart();
 };
 function completeOrder() {
+    saveOrder();
     localStorage.removeItem('cart');
-    window.location.href = '/merch/thanks/'
+    //window.location.href = '/merch/thanks/';
+};
+
+function saveOrder() {
+    const API_URL = 'http://localhost:3000/'
+
+    let order = {
+        items: [],
+        total: 0
+    };
+    for (let i=0; i<cart.length; i++) {
+        order.items.push({
+            id: cart[i].id,
+            name: cart[i].name,
+            price: cart[i].price,
+            quantity: cart[i].quantity
+        });
+        order.total += cart[i].price * cart[i].quantity;
+    }
+
+    // Connect to backend
+    fetch(API_URL+'orders', {
+        method: 'POST',
+        body: JSON.stringify(order),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8'
+        }
+    })
+    .then(res => res.json())
+    .then(data => {
+        console.log("Order saved", data)
+    })
+    .catch (error => {
+        console.log(error)
+    })
 }
