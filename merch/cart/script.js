@@ -8,6 +8,8 @@ function loadCart() {
 
     if (cart.length == 0) {
         productList.innerHTML = 'Your cart is empty'
+        summaryList.innerHTML = '';
+        total.innerHTML = 0;
     } else {
         productHTML = '';
         summaryHTML = '';
@@ -67,3 +69,7 @@ function increaseAmount(itemID) {
     }
     loadCart();
 };
+function completeOrder() {
+    localStorage.removeItem('cart');
+    window.location.href = '/merch/thanks/'
+}
