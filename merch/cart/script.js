@@ -72,7 +72,7 @@ function increaseAmount(itemID) {
 function completeOrder() {
     saveOrder();
     localStorage.removeItem('cart');
-    //window.location.href = '/merch/thanks/';
+    window.location.href = '/merch/thanks/';
 };
 
 function saveOrder() {
