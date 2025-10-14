@@ -84,7 +84,12 @@ body{
 #TTPDback:hover, #TTPDplay:hover, #TTPDshuffle:hover{
     background-color: #1f1c1a;
 }
-
+#showgirlback, #showgirlplay, #showgirlshuffle{
+    background-color: #d9581f;
+}
+#showgirlback:hover, #showgirlplay:hover, #showgirlshuffle:hover{
+    background-color: #ab4418;
+}
 
 .album-container {
     max-width: 70vw;

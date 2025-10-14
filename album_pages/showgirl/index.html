@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Life of a Showgirl</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body onload="getAlbumData(11)">
+    <button id="showgirlback" class="back-button" onclick="window.location.href='/'">← Back</button>
+    <div class="album-container">
+        <div class="album-header">
+            <img id="bilde" alt="The Life of a Showgirl Album Cover" class="album-cover">
+            <div class="album-details">
+                <p id="album-label"></p>
+                <p id="album-title"></p>
+                <p class="album-meta">Taylor Swift • 2025 • 12 songs, 42 min 45 sek</p>
+                <div class="album-actions">
+                    <button id="showgirlplay" onclick="startPlaybackOnDevice(11,0)" class="play-button" >▶ Play</button>
+                    <button id="showgirlshuffle" onclick="playAlbumShuffled(11)" class="shuffle-button">🔀 Shuffle</button>
+                </div>
+            </div>
+        </div>
+        <div class="tracklist">
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Title</th>
+                        <th>Duration</th>
+                    </tr>
+                </thead>
+                <tbody id="tracklist">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="../../server.js"></script>
+</body>
+</html>

@@ -3,7 +3,7 @@ let accessToken = '';
 const refreshToken = 'AQC3R1a3o6sL0hEIOAG_PtqZ3VdDmdfRTGqE1pQtShZzgNM2pV9CRi0_Jjm7uo2KVc0-Jt_Q0Kixwjhdd1W1YU-s4UiyrvDfMGDRXjCeNmyfehcylF9lj6nCnKIbMyXD6Lk';
 const clientId = '06a4f77d92e745f29d2687d2700fa83e';
 const clientSecret = '8761d61fc4b2425cb90d4cc3daae0094';
-const deviceId = 'e112199fd21344deb7e9d4d3a02d966969ee8e38';
+const deviceId = '0e4b74686d0dbad536b40501463327d124b3d9e8';
 const tokenUrl = 'https://accounts.spotify.com/api/token';
 let trackNr = 0;
 const albumUri = [
@@ -17,7 +17,8 @@ const albumUri = [
   "1pzvBxYgT6OVwJLtHkrdQK", // folklore - 7
   "6AORtDjduMM3bupSWzbTSG", // evermore - 8
   "1fnJ7k0bllNfL1kVdNVW1A", // Midnights - 9
-  "5H7ixXZfsNMGbIE5OBSpcb" // TTPD - 10
+  "5H7ixXZfsNMGbIE5OBSpcb", // TTPD - 10
+  "4a6NzYL1YHRUgx9e3YZI6I" // Showgirl - 11
 ];
 
 
