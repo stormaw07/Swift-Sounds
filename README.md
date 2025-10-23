@@ -43,7 +43,7 @@ After the API is working, the only thing remaining for the website to work perfe
     - `mysql.server start`
     - `brew services start mariadb`
 2. Then run this command and log in with the computers root password
-    - `mariadb -u root`
+    - `sudo mariadb -u root -p`
 3. When you're in, create a database, open it and create a table called "Users" and a table called "Album_songs" with these commands:
     - `CREATE DATABASE Swiftle;`
     - `USE Swiftle;`
