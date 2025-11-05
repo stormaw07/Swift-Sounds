@@ -200,6 +200,8 @@ const removeList = [ // Oppretter en liste med strings som skal bli fjernet fra 
   ` - Radio Single Remix`,` - Pop Version`,` - bonus track`,
   ` (feat. Colbie Caillat)`,` (feat. Marren Morris)`,` (feat. Keith Urban)`,` (feat. Fall Out Boy)`,` (feat. Hayley Williams)`,` (feat. Gary Lightbody of Snow Patrol)`,` (feat. Ed Sheeran)`,` (feat. Phoebie Bridgers)`,` (feat. Chris Stapleton)`,` (feat. Kendrick Lamar)`,` (feat. The Chicks)`,` (feat. Brendon Urie of Panic! At The Disco)`,` (feat. Bon Iver)`,` (feat. HAIM)`,` (feat. The National)`,` (feat. Lana Del Rey)`,` (feat. More Lana Del Rey)`,` (feat. Ice Spice)`,` (feat. Post Malone)`,` (feat. Florence + The Machine)`,` (feat. Sabrina Carpenter)`
 ];
+let guessCount = 0;
+let playBackTime = [1,2,4,8,16,32]
 
 function pickRandomSong(){
   if (!random_int) { // Hvis random_int = False kjøres dette:
@@ -212,10 +214,11 @@ function pickRandomSong(){
 }
 
 async function pickRandomTrackNr(random_int) {
-  if (!trackNr) { // Hvis trackNr ikke eksisterer enda må den finne ut av hvilken track den skal spille
-    if (!accessToken) {
+  if (!accessToken) {
       await refreshAccessToken(); // Kaller på refreshtoken funksjonen sånn at den kan hente ut data fra API-en
     }
+  if (!trackNr) { // Hvis trackNr ikke eksisterer enda må den finne ut av hvilken track den skal spille
+    
     fetch(`https://api.spotify.com/v1/albums/${albumUri[random_int]}`, { // Henter albumet basert på hvilken tall man fikk fra dne forrige funksjonen
       method: "GET",
       headers: { "Authorization": `Bearer ${accessToken}` },
@@ -226,10 +229,38 @@ async function pickRandomTrackNr(random_int) {
       console.log(trackNr+1)
       getSongsFromDatabase(data.name, trackNr+1)
       startPlaybackOnDevice(random_int, trackNr) // Sender inn random_int for albumet og trackNr for hvilken sang som skal spilles av
+      setTimeout(() => {
+        pausePlayback();
+      }, 1000);
     })
     .catch(error => console.error("Error:", error));
   } else{
     startPlaybackOnDevice(random_int, trackNr) // Hvis trackNr allerede finnes, altså knappen har blitt trykket på før, går den videre til avspillingsfunksjonen
+  }
+  setTimeout(() => {
+        pausePlayback();
+      }, (playBackTime[guessCount]) * 1000);
+}
+
+// Pause funksjon:
+async function pausePlayback() {
+  if (!accessToken) await refreshAccessToken();
+
+  try {
+    const response = await fetch('https://api.spotify.com/v1/me/player/pause', {
+      method: 'PUT',
+      headers: {
+        "Authorization": `Bearer ${accessToken}`,
+      },
+    });
+
+    if (response.ok) {
+      console.log("Playback paused.");
+    } else {
+      console.error("Error pausing playback:", await response.json());
+    }
+  } catch (error) {
+    console.error("Failed to pause playback:", error);
   }
 }
 
@@ -269,22 +300,37 @@ const gameFeedback = document.getElementById('gameFeedback');
 
 function guessSong() {
   let guess = document.getElementById('guess').value
+  document.getElementById('guess').value = "";
+  if (!guess) return;
+
   // Fjerner de stringsene i listen fra "answer"
   removeList.forEach(str => {
     answer = answer.replace(str, "");
   });
   answer = answer.trim();
-  console.log(answer);
+  
+  console.log("User guessed:", guess)
+  console.log("Correct answer:", answer);
+
+  guessCount++; // Øker antall guesses med 1
+
+  let guessField = document.getElementById(`guess${guessCount}`); // Henter ut hvor den skal displaye guesset basert på hvilket guess man er på
+  if (guessField) {
+    guessField.textContent = guess;
+  }
 
   if (guess.toLowerCase() === answer.toLowerCase()) {
     console.log('rikitg');
-    gameFeedback.innerHTML = 'Riktig!';
-    gameFeedback.style.display = 'block';
-    document.getElementById('guess').value = "";
+    document.getElementById('guess').disabled = true
+
+    guessField.style.color = "#32CD32";
   } else {
     console.log('feil');
-    gameFeedback.innerHTML = 'Feil :(';
-    gameFeedback.style.display = 'block';
+
+    guessField.style.color = "#FF474C";
+  }
+  if (guessCount >= 6){
+    document.getElementById('guess').disabled = true
   }
 }
 

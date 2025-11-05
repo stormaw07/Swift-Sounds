@@ -69,12 +69,33 @@
         </div>
     </div>
 
-    <div id="gameContainer">
-        <button onclick="pickRandomSong()" id="pickSongButton">Pick Random Song</button>
-        <input type="text" id="guess" placeholder="Guess the song!" autocomplete="off">
-        <p id="gameFeedback"></p>
-    </div>
+    <div id="gamePage">
+        <div id="gameContainer">
+            <h1 id="gameText">Guess the song:</h1>
+            <button onclick="pickRandomSong()" id="pickSongButton">▶︎</button>
+            <input type="text" id="guess" autocomplete="off">
+            <div id="gameGuesses">
+                <div class="guessField" id="guess1">
 
+                </div>
+                <div class="guessField" id="guess2">
+
+                </div>
+                <div class="guessField" id="guess3">
+
+                </div>
+                <div class="guessField" id="guess4">
+
+                </div>
+                <div class="guessField" id="guess5">
+
+                </div>
+                <div class="guessField" id="guess6">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
 
    <script src="./server.js"></script>
    <script src="./script.js"></script>
