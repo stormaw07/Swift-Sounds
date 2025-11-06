@@ -9,6 +9,7 @@ app.use(cors());
 const bcrypt = require('bcryptjs');
 const crypto = require('crypto');
 
+// Hente ut sanger for spillet
 app.post("/songs", async (req, res) => {
     let query = `SELECT * FROM Album_songs`;
     try {
@@ -30,6 +31,7 @@ app.post("/songs", async (req, res) => {
     }
 });
 
+// Opprette ny bruker
 app.post("/newUser", async (req, res) => {
     let query = `SELECT * FROM Users;`;
     let newUser = req.body;
@@ -69,6 +71,7 @@ app.post("/newUser", async (req, res) => {
     }
 })
 
+// Logge inn 
 app.post("/login", async (req, res) => {
     let query = `SELECT * FROM Users;`;
     try {
@@ -96,6 +99,7 @@ app.post("/login", async (req, res) => {
     }
 })
 
+// Merch - Music
 app.get("/music", async (req, res) => {
     let query = 'SELECT * FROM Merch WHERE type="music"'; //Henter bare ut musikk produktene
     try {
@@ -106,6 +110,7 @@ app.get("/music", async (req, res) => {
     }
 });
 
+// Merch - Other
 app.get("/other", async (req, res) => {
     let query = 'SELECT * FROM Merch WHERE type="other"'; //Henter bare ut de andre produktene
     try {
@@ -116,6 +121,7 @@ app.get("/other", async (req, res) => {
     }
 });
 
+// Merch - Cart saving
 app.post("/orders", async (req, res) => {
     let query = `INSERT INTO Orders (items, total) VALUES (?, ?)`;
     let newOrder = req.body;
@@ -133,7 +139,7 @@ app.post("/orders", async (req, res) => {
     res.json(newOrder)
 })
 
-
+// Adresse for backend-en
 app.listen(port, () => {
     console.log(`server running at http://localhost:${port}`);
 });
